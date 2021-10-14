@@ -5,6 +5,7 @@
 - Склонировать репозиторий https://github.com/Stevinel/test_outofcloud
 - Установить виртуальное окружение python -m venv venv
 - Установить зависимости pip install -r requiremets.txt
+- Создать и сделать миграции python manage.py makemigrations & python manage.py migrate
 - Создать суперпользователя python manage.py createsuperuser
 - Запустить сервер python manage.py runserver
 - Зайти в Postman для тестирования.
