@@ -6,7 +6,7 @@ class Game(models.Model):
     Модель электронного адреса
     """
 
-    email = models.CharField("Электронный адрес", max_length=50, unique=True)
+    email = models.EmailField("Электронный адрес", max_length=50, unique=True)
     number_of_games = models.PositiveBigIntegerField(
         "Количество игр", null=True
     )

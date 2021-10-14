@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import create_or_update_email
+from .views import MyDB
 
 urlpatterns = [
-    path("v1/emails/", create_or_update_email, name="emails"),
+    path("v1/emails/", MyDB.check_email, name="emails"),
 ]
