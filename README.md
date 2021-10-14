@@ -8,6 +8,6 @@
 - Создать и сделать миграции python manage.py makemigrations & python manage.py migrate
 - Создать суперпользователя python manage.py createsuperuser
 - Запустить сервер python manage.py runserver
-- Зайти в Postman для тестирования.
+- Зайти в Postman для тестирования
 - Отправить POST запрос по эндпойнту http://127.0.0.1:8000/api/v1/emails/ с ключом email
 - Можно смотреть созданные данные в админке http://127.0.0.1:8000/admin/
