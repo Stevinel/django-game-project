@@ -3,7 +3,7 @@ from django.db import models
 
 class Game(models.Model):
     """
-    Модель электронного адреса
+    Модель данных игры
     """
 
     email = models.EmailField("Электронный адрес", max_length=50, unique=True)
