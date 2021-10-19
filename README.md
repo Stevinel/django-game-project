@@ -4,10 +4,21 @@
 # Установка
 - Склонировать репозиторий https://github.com/Stevinel/test_outofcloud
 - Установить виртуальное окружение python -m venv venv
-- Установить зависимости pip install -r requiremets.txt
-- Создать и сделать миграции python manage.py makemigrations & python manage.py migrate
-- Создать суперпользователя python manage.py createsuperuser
-- Запустить сервер python manage.py runserver
+- Выполнить команды:
+   ```
+   docker-compose up -d --build
+   docker-compose exec web python manage.py migrate --noinput
+   docker-compose exec web python manage.py createsuperuser
+   docker-compose exec web python manage.py collectstatic --no-input
+   ```
 - Зайти в Postman для тестирования
-- Отправить POST запрос по эндпойнту http://127.0.0.1:8000/api/v1/emails/ с ключом email
-- Можно смотреть созданные данные в админке http://127.0.0.1:8000/admin/
+- Отправить POST запрос по эндпойнту http://127.0.0.1/api/v1/emails/ с ключом email
+- Можно смотреть созданные данные в админке http://127.0.0.1/admin/ 
+
+# Стек
+- Python
+- Django
+- Docker
+- Nginx
+- Gunicorn
+- Postgresql
