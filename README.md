@@ -4,6 +4,18 @@
 # Установка
 - Склонировать репозиторий https://github.com/Stevinel/test_outofcloud
 - Установить виртуальное окружение python -m venv venv
+- Создать .env файл и добавить переменные:
+   ```
+   DB_ENGINE=django.db.backends.postgresql
+   DB_NAME=postgres
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=postgres
+   DB_HOST=db
+   DB_PORT=5432
+   SECRET_KEY=django-insecure-h&law^nuq%!1()y!v&px+m+cj)sr18s_m4h%efg02o$tni=oq@
+   
+   !!! В рабочем проекте никогда так не делается !!!
+   ```
 - Выполнить команды:
    ```
    docker-compose up -d --build
