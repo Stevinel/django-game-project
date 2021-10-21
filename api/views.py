@@ -37,9 +37,9 @@ class MyDB(Main):
                         }
                     )
 
-                title = Game.objects.get(email=request.data["email"])
-                title.number_of_games += 1  # Если в базе игры почта есть, инкрементим в базе кол-во игр
-                title.save()
+                game = Game.objects.get(email=request.data["email"])
+                game.number_of_games += 1  # Если в базе игры почта есть, инкрементим в базе кол-во игр
+                game.save()
                 return JsonResponse(
                     {
                         "db_existed": True,
