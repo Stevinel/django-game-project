@@ -37,9 +37,7 @@ class Esp(Main):
 
 
 def create_email_in_db(request):
-    Game.objects.create(
-                        email=request.data["email"], number_of_games="1"
-                    )
+    Game.objects.create(email=request.data["email"], number_of_games="1")
 
 
 def get_email_from_db(request):
