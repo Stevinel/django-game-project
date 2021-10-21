@@ -22,12 +22,8 @@ class MyDB(Main):
                 serializer = GameSerializer(data=request.data)
 
                 if serializer.is_valid():  # Если в базе игры почты нет
-                    create_email_in_db(
-                        request
-                    )  # Бэкенд записывает в свою базу факт игры
-                    esp_results = Esp.check_email(
-                        request.data["email"]
-                    )  # Возвращает информацию о существовании почты в БД
+                    create_email_in_db(request)  # Бэкенд записывает в свою базу факт игры
+                    esp_results = Esp.check_email(request.data["email"])  # Возвращает информацию о существовании почты в БД
                     return JsonResponse(
                         {
                             "db_existed": False,
