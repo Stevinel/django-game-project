@@ -43,7 +43,7 @@ class MyDB(Main):
                 return JsonResponse(
                     {
                         "db_existed": True,
-                        "number_of_games": title.number_of_games,
+                        "number_of_games": game.number_of_games,
                     }
                 )
             except:
