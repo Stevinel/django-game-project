@@ -4,7 +4,7 @@ from .models import Game
 
 
 class GameSerializer(serializers.ModelSerializer):
-    """Сериалайзер данных о игре"""
+    """Сериалайзер данных об игре"""
 
     class Meta:
         model = Game
