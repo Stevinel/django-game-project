@@ -1,5 +1,7 @@
 from abc import ABC, abstractclassmethod
 
+from .models import Game
+
 
 class Main(ABC):
     """
@@ -32,3 +34,16 @@ class Esp(Main):
             return False
         else:
             return True
+
+
+def create_email_in_db(request):
+    Game.objects.create(
+                        email=request.data["email"], number_of_games="1"
+                    )
+
+
+def get_email_from_db(request):
+    game = Game.objects.get(email=request.data["email"])
+    game.number_of_games += 1  # Если в базе игры почта есть, инкрементим в базе кол-во игр
+    game.save()
+    return game

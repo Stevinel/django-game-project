@@ -4,6 +4,8 @@ from .models import Game
 
 
 class GameSerializer(serializers.ModelSerializer):
+    """Сериалайзер данных о игре"""
+
     class Meta:
         model = Game
         fields = ["email", "number_of_games"]

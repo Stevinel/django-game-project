@@ -2,9 +2,8 @@ from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 
-from .models import Game
 from .serializers import GameSerializer
-from .services import Esp, Main
+from .services import Esp, Main, create_email_in_db, get_email_from_db
 
 
 class MyDB(Main):
@@ -23,8 +22,8 @@ class MyDB(Main):
                 serializer = GameSerializer(data=request.data)
 
                 if serializer.is_valid():  # Если в базе игры почты нет
-                    Game.objects.create(
-                        email=request.data["email"], number_of_games="1"
+                    create_email_in_db(
+                        request
                     )  # Бэкенд записывает в свою базу факт игры
                     esp_results = Esp.check_email(
                         request.data["email"]
@@ -37,13 +36,11 @@ class MyDB(Main):
                         }
                     )
 
-                title = Game.objects.get(email=request.data["email"])
-                title.number_of_games += 1  # Если в базе игры почта есть, инкрементим в базе кол-во игр
-                title.save()
+                game = get_email_from_db(request)
                 return JsonResponse(
                     {
                         "db_existed": True,
-                        "number_of_games": title.number_of_games,
+                        "number_of_games": game.number_of_games,
                     }
                 )
             except:
