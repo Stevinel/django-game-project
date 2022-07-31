@@ -1,5 +1,5 @@
-# Задание
-![image](https://user-images.githubusercontent.com/72396348/137326383-b395fc8e-d8f2-4de0-9721-5e607729377a.png)
+
+![image](https://user-images.githubusercontent.com/72396348/182043119-1940ef03-0b27-4a30-9629-d9a8fbe70556.png)
 
 # Установка
 - Склонировать репозиторий https://github.com/Stevinel/test_outofcloud
